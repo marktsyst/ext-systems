@@ -49,6 +49,8 @@ CREATE TABLE cr_address (
 
 INSERT INTO cr_address (district_code, street_code, building, extension, apartment)
 VALUES (1, 1, '10', '2', '121');
+INSERT INTO cr_address (district_code, street_code, building, extension, apartment)
+VALUES (1, 1, '271', null, '4');
 
 
 CREATE TABLE cr_person (
@@ -90,13 +92,15 @@ CREATE TABLE cr_address_person (
                                    person_id integer not null,
                                    start_date date not null,
                                    end_date date,
+                                   temporal boolean DEFAULT false,
                                    PRIMARY KEY (person_address_id),
                                    FOREIGN KEY (address_id) REFERENCES cr_address(address_id) ON DELETE RESTRICT,
                                    FOREIGN KEY (person_id) REFERENCES cr_person(person_id) ON DELETE RESTRICT
 );
 
-INSERT INTO cr_address_person (address_id, person_id, start_date, end_date)
-VALUES (1, 1, '2014-10-12', null);
+INSERT INTO cr_address_person (address_id, person_id, start_date, end_date, temporal)
+VALUES (1, 1, '2014-10-12', null, false);
+VALUES (2, 2, '2014-10-12', null);
 
 INSERT INTO cr_address_person (address_id, person_id, start_date, end_date)
 VALUES (1, 2, '2014-10-12', null);
@@ -105,4 +109,4 @@ INSERT INTO cr_address_person (address_id, person_id, start_date, end_date)
 VALUES (1, 3, '2016-02-05', null);
 
 INSERT INTO cr_address_person (address_id, person_id, start_date, end_date)
-VALUES (1, 3, '2018-12-11', null);
+VALUES (1, 4, '2018-12-11', null);
