@@ -10,11 +10,11 @@ import java.net.Socket;
 public class SimpleSocket {
     @Test
     public void simpleSocket() throws IOException {
-        try (Socket socket = new Socket("java-course.ru", 80);
+        try (Socket socket = new Socket("localhost", 8082);
              InputStream is = socket.getInputStream();
              OutputStream os = socket.getOutputStream()) {
 
-            String command = "GET /sitemap.xml HTTP/1.1\r\nHost:java-course.ru\r\n\r\n";
+            String command = "GET / HTTP/1.1\r\nHost:java-course.ru\r\n\r\n";
             os.write(command.getBytes());
             os.flush();
 
