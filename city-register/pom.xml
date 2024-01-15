@@ -106,6 +106,7 @@
                 <version>3.4.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <outputDirectory>/home/marktsyst/java/apache-tomcat-9.0.80/webapps</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
