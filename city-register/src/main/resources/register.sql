@@ -1,19 +1,9 @@
-/*
-1. Район
-2. Улица
-3. Адрес - район, улица, дом, корпус, квартира
-4. Персона - ФИО, дата рождения, Паспорт (серия/номер/дата выдачи),
-Свидетельсво о рождении (номер/дата выдачи)
-5. Связь персоны и адреса - Персона, Адрес и диапазон дат, вид регистрации
-
-DDD - Domain Driven Development
-*/
-
 DROP TABLE IF EXISTS cr_address_person;
 DROP TABLE IF EXISTS cr_person;
 DROP TABLE IF EXISTS cr_address;
 DROP TABLE IF EXISTS cr_street;
 DROP TABLE IF EXISTS cr_district;
+
 
 CREATE TABLE cr_district (
                              district_code integer not null,
@@ -23,6 +13,7 @@ CREATE TABLE cr_district (
 
 INSERT INTO cr_district (district_code, district_name)
 VALUES (1, 'Выборгский');
+
 
 CREATE TABLE cr_street
 (
@@ -100,7 +91,6 @@ CREATE TABLE cr_address_person (
 
 INSERT INTO cr_address_person (address_id, person_id, start_date, end_date, temporal)
 VALUES (1, 1, '2014-10-12', null, false);
-VALUES (2, 2, '2014-10-12', null);
 
 INSERT INTO cr_address_person (address_id, person_id, start_date, end_date)
 VALUES (1, 2, '2014-10-12', null);
