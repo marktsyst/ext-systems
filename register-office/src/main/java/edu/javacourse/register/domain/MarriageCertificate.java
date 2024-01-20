@@ -7,9 +7,7 @@ import java.time.LocalDate;
 @Table(name = "ro_marriage_certificate")
 @Entity
 @NamedQuery(name = "MarriageCertificate.findByNum",
-    query = """
-        SELECT mc FROM MarriageCertificate mc WHERE mc.number = :number
-""")
+    query = "SELECT mc FROM MarriageCertificate mc WHERE mc.number = :number")
 public class MarriageCertificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,7 +6,6 @@ import edu.javacourse.register.domain.MarriageCertificate;
 import edu.javacourse.register.domain.Person;
 import edu.javacourse.register.domain.PersonFemale;
 import edu.javacourse.register.domain.PersonMale;
-import edu.javacourse.register.rest.MarriageController;
 import edu.javacourse.register.view.MarriageRequest;
 import edu.javacourse.register.view.MarriageResponse;
 import org.slf4j.Logger;
@@ -62,10 +61,10 @@ public class MarriageManager {
 
         List<Person> persons = personDao.findPersons();
         for (Person person : persons) {
-            if (person instanceof PersonMale male) {
-                mc.setHusband(male);
-            } else if (person instanceof PersonFemale female) {
-                mc.setWife(female);
+            if (person instanceof PersonMale) {
+                mc.setHusband((PersonMale) person);
+            } else if (person instanceof PersonFemale) {
+                mc.setWife((PersonFemale) person);
             }
         }
         return mc;
