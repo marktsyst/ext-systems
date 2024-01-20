@@ -15,7 +15,6 @@ import java.util.List;
                 SELECT p FROM Person p
                     LEFT JOIN FETCH p.passports ps
                     LEFT JOIN FETCH p.birthCertificate bc
-                    WHERE p.personId = :personId 
                     """)
 })
 public abstract class Person {
