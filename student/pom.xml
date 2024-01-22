@@ -2,25 +2,26 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.javacourse.ext</groupId>
-  <artifactId>strudent</artifactId>
+  <artifactId>student</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j.version>2.0.9</slf4j.version>
-    <spring.version>5.3.31</spring.version>
-    <spring-data.version>3.1.0</spring-data.version>
+    <spring.version>5.1.9.RELEASE</spring.version>
+    <spring-data.version>2.2.1.RELEASE</spring-data.version>
     <jersey.version>2.41</jersey.version>
     <jaxb.version>2.3.1</jaxb.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.hibernate.orm</groupId>
+      <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>6.4.1.Final</version>
+      <version>5.4.33.Final</version>
     </dependency>
 
     <dependency>
@@ -48,6 +49,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.data</groupId>

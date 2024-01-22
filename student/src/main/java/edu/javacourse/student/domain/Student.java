@@ -1,6 +1,6 @@
 package edu.javacourse.student.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
