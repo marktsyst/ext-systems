@@ -6,10 +6,7 @@ import edu.javacourse.student.view.StudentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -18,6 +15,11 @@ import java.util.List;
 public class StudentController {
     @Autowired
     private StudentService studentService;
+
+    @GET
+    public String getInfo(){
+        return "test test";
+    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
