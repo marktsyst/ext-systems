@@ -4,27 +4,26 @@ import edu.javacourse.student.service.StudentService;
 import edu.javacourse.student.view.StudentRequest;
 import edu.javacourse.student.view.StudentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Component
-@Path("/student")
+@RestController
+@RequestMapping(path = "/student")
 public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GET
-    public String getInfo(){
-        return "test test";
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<StudentResponse> getStudentInfo(@RequestBody StudentRequest request) {
+        return studentService.getStudentInfo(request);
     }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<StudentResponse> getStudentInfo(StudentRequest request) {
-        return studentService.getStudentInfo(request);
+    @GetMapping(path = "/check")
+    public String checkAdmin() {
+        return "Rest service is working";
     }
 }
